@@ -1,0 +1,45 @@
+ <div class="card">
+    <h1>Liste materiels</h1>
+    <p-table [value]="Mat" responsiveLayout="scroll" id="excel-table">
+        <ng-template pTemplate="caption">
+            <div class="flex">
+                <button type="button" pButton  icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success mr-2"></button>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+                <tr>
+                    <th [pSortableColumn]="champ.toLowerCase()" *ngFor="let champ of champs">{{champ}}<p-sortIcon [field]="champ"></p-sortIcon></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-mat>
+                <tr>
+                    <td>{{mat.categorie}}</td>
+                    <td>{{mat.marque}}</td>
+                    <td>{{mat.serie}}</td>
+                    <td>{{mat.date}}</td>
+                    <td>{{mat.inventaire}}</td>
+                    <td>{{mat.prix}}</td>
+                    <td>{{mat.etat}}</td>
+                    <td *ngIf="mat.valide == 'attente'">
+                        <i class="pi pi-info-circle" id="blue"></i>
+                    </td>
+                    <td *ngIf="mat.valide == 'valide'">
+                        <i class="pi pi-check-circle" id="green"></i>
+                    </td>
+                    <td *ngIf="mat.valide == 'refuse'">
+                        <i class="pi pi-times-circle" id="red"></i>
+                    </td>
+                    <td *ngIf="AuthService.ChekRole('Gestionnaire') && mat.valide != 'valide'">
+                        <i class="pi pi-trash" (click)="onDelete(mat)" id="red"></i>
+                    </td>
+                    <td *ngIf="AuthService.ChekRole('Comptable') && mat.valide == 'attente'">
+                        <i class="pi pi-check" (click)="onAccipte(mat)" id="green"></i>
+                        <i class="pi pi-times" (click)="onRefuse(mat)" id="red"></i>
+                    </td>
+                </tr>
+        </ng-template>
+    </p-table>
+</div>
+

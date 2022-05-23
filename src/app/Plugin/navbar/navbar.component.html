@@ -1,0 +1,38 @@
+<mat-toolbar class="navbar">
+  <div class="leftdiv">
+    <div class="logo">
+      <img alt="" src="assets/img/kanaghazlogo.png">
+    </div>
+    <div class="logo-text">KANAGHAZ</div>
+  </div>
+  <ul class="nav-nav">
+    <li class="nav-item">
+      <div *ngIf="authService.ChekLogin()">
+        <a class="link" *ngIf="authService.ChekRole('Admin')" (click)=" dialog.SignupDialog()">
+          <i class="link-icon bx bx-user-plus"></i>
+        </a>
+        <a class="link">
+          <i class="link-icon bx bx-bell"></i>
+        </a>            
+        <a class="link" (click)=" dialog.ListUsersDialog()">
+          <i class="link-icon bx bxs-user-account"></i>
+        </a> 
+        <a class="link" *ngIf="!authService.ChekRole('Comptable')" (click)="dialog.AddMaterielDialog()">
+          <i class="link-icon bx bxs-cart-add"></i>
+        </a>
+        <a class="link"  (click)="authService.logout()">
+          <i class="link-icon bx bx-log-out"></i>
+        </a> 
+      </div>
+      <div *ngIf="!authService.ChekLogin()">
+        <a class="link" >
+          <i class="link-icon bx bx-envelope"></i>
+        </a>   
+      </div>
+    </li>
+  </ul>
+</mat-toolbar>
+
+
+
+

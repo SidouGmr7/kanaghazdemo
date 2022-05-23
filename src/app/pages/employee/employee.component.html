@@ -1,0 +1,49 @@
+<div class="container" id="main-container">
+   <div class="header">
+          <div class="searchbar" style="width: 600px; display: table-cell;" > 
+            <input  (ngModelChange)="searchEmployees(key.value)" #key="ngModel" ngModel class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+         </div>
+          <div  class="float-right"> 
+            <button mat-icon-button (click)="dialog.AddDialog()" color="black">
+               <i class='bx bx-user-plus float-right' ></i>           
+            </button>
+         </div>
+   </div>
+  <br>
+   <div class="row">
+      <div *ngFor="let employee of employees" class="col-md-6 col-xl-3">
+         <div class="card m-b-30">
+            <div class="card-body row">
+               <div class="col-6">
+                  <a><img src="{{employee?.imageUrl}}" alt="" class="img-fluid rounded-circle w-60"></a>
+               </div>
+               <div class="col-6 card-title align-self-center mb-0">
+                  <h5>{{employee?.id}}</h5>
+                  <p class="m-0">{{employee?.jobTitle}}</p>
+               </div>
+            </div>
+            <ul class="list-group list-group-flush">
+               <li class="list-group-item"><i class='bx bx-envelope float-right' ></i>{{employee?.email}}</li>
+               <li class="list-group-item"><i class='bx bx-phone float-right' ></i>Phone : {{employee?.phone}}</li>
+            </ul>
+            <div class="card-body ">
+                  <button mat-icon-button (click)="dialog.UpdateDialog(employee)" color="black">
+                     <i class='bx bx-edit-alt' ></i>
+                  </button>
+                  <button mat-icon-button (click)="eService.onDeleteEmloyee(employee)" color="black">
+                     <i class='bx bx-user-x' ></i>
+                  </button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Notification for no employees -->
+   <div *ngIf="employees?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+      <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">NO EMPLOYEES!</h4>
+      <p>No Employees were found.</p>
+      </div>
+   </div>
+</div>
+
+

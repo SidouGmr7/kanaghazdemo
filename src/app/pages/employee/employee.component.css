@@ -1,0 +1,42 @@
+
+.card {
+  background-color: #f2f4fa;
+}
+.list-group-item{
+  background-color: #f2f4fa;
+}
+.header{
+  display: flex;
+}
+a i{
+  cursor: pointer;
+  color: #f2f4fa;
+}
+.card {
+  border: none;
+  border-radius: 20%;
+  margin-bottom: 25px;
+}
+.w-60 {
+  width: 60px;
+}
+.searchbar input{
+  border-radius: 20px;
+  border: none;
+  background: none;
+  width: 7rem;
+  transition: 0.8s;
+}
+.searchbar:hover input{
+  width: 20rem;
+  height: auto;
+  background: #f2f4fa;
+}
+
+.float-right button{
+  font-size: 30px;
+}
+.card-body button{
+  font-size: 20px;
+  float: right;
+}

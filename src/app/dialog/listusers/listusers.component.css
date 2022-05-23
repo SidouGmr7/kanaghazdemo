@@ -1,0 +1,11 @@
+.bx{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.bx-no-signal{
+    color: red;
+}
+.bx-signal-5{
+    color: green;
+}

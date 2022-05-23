@@ -1,0 +1,29 @@
+<div class="sidenav" [ngClass]="screen.collapsed ? 'sidenav-collapsed': ''">
+    <ul class="side-body">
+        <li>
+            <a class="item-link" (click)="togglecollapse()">
+                <i class='item-icon bx bxl-xing bx-tada bx-rotate-270' ></i>
+            </a> 
+        </li>
+        <li class="item" *ngFor="let data of navData">
+            <div *ngIf="authService.ChekRole('Admin')">
+                <a class="item-link" [routerLink]="[data.routeLink]" routerLinkActive="active">
+                    <i class="item-icon" [class] = 'data.icon'></i>
+                    <span class="item-text" @fadeInOut *ngIf="screen.collapsed">{{data.label}}</span>
+                </a>    
+            </div>    
+            <div *ngIf="authService.ChekRole('Comptable') &&  data.Comptable">
+                <a class="item-link" [routerLink]="[data.routeLink]" routerLinkActive="active">
+                    <i class="item-icon" [class] = 'data.icon'></i>
+                    <span class="item-text" @fadeInOut *ngIf="screen.collapsed">{{data.label}}</span>
+                </a>    
+            </div>    
+            <div *ngIf="authService.ChekRole('Gestionnaire') && data.Gestionnaire">
+                <a class="item-link" [routerLink]="[data.routeLink]" routerLinkActive="active">
+                    <i class="item-icon" [class] = 'data.icon'></i>
+                    <span class="item-text" @fadeInOut *ngIf="screen.collapsed">{{data.label}}</span>
+                </a>    
+            </div>        
+        </li>
+    </ul>
+</div>

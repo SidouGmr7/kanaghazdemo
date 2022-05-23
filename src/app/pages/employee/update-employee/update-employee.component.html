@@ -1,0 +1,33 @@
+<!-- Edit Modal -->
+<h1 mat-dialog-title>Edit Employee</h1>
+   <div>
+      <form #editForm="ngForm">
+         <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput  ngModel="{{data?.name}}" name="name" id="name" >
+         </mat-form-field>
+         <input type="hidden" ngModel="{{data?.id}}" name="id" class="form-control" id="id">
+         <input type="hidden" ngModel="{{data?.employeeCode}}" name="userCode" class="form-control" id="userCode">
+         <mat-form-field appearance="outline">
+            <mat-label>Email Address</mat-label>
+            <mat-label></mat-label>
+            <input matInput  ngModel="{{data?.email}}" name="email" id="email">
+         </mat-form-field>
+         <mat-form-field appearance="outline">
+            <mat-label>Job title</mat-label>
+            <input matInput  ngModel="{{data?.jobTitle}}" name="jobTitle" id="jobTitle">
+         </mat-form-field>
+         <mat-form-field appearance="outline">
+            <mat-label>Phone</mat-label>
+            <input matInput  ngModel="{{data?.phone}}" name="phone" id="phone" name="phone">
+         </mat-form-field>
+         <mat-form-field appearance="outline">
+            <mat-label>Image URL</mat-label>
+            <input matInput  ngModel="{{data?.imageUrl}}" name="imageUrl" id="imageUrl">
+         </mat-form-field>
+         <div class="bntclick">
+            <button type="button" mat-button mat-dialog-close id="" class="btn btn-secondary">Close</button>
+            <button type="button" mat-button mat-dialog-close (click)="onUpdateEmloyee(editForm.value)" class="btn btn-primary" >Save changes</button>
+         </div>
+      </form>
+   </div>

@@ -1,0 +1,22 @@
+ 
+<div class="form-container">
+    <h1>Login</h1>
+    <form>
+        <div class="p-float-label p-input-icon-left">
+            <input title="email" pInputText  #email> 
+            <label for="inputtext-left">Email Address</label>
+            <i class="pi pi-user"></i>
+        </div>
+        <div class="p-float-label p-input-icon-left">
+            <p-password #password></p-password>
+            <label for="inputtext-left">Mot de passe</label>
+            <i class="pi pi-lock"></i>
+        </div>
+        <div class="p-float-label">
+            <p-button mat-dialog-close type="submit" (click)="onLogin(email.value,password.value)">LOGIN</p-button>
+        </div>
+    </form>
+</div>
+
+
+

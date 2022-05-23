@@ -1,0 +1,33 @@
+<!-- Modal -->
+      <h1 mat-dialog-title>Add Employee</h1>
+      <div>
+         <form #addForm="ngForm" (ngSubmit)="onAddEmloyee(addForm.value)">
+            <mat-form-field appearance="outline">
+               <mat-label>Name</mat-label>
+               <input matInput ngModel name="name" id="name"  required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+               <mat-label>Email Address</mat-label>
+               <input matInput ngModel name="email" id="email" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+               <mat-label>Job title</mat-label>
+               <input matInput ngModel name="jobTitle" id="jobTile" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+               <mat-label>Phone</mat-label>
+               <input matInput ngModel name="phone" id="phone" required/>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+               <mat-label>Image URL</mat-label>
+               <input matInput ngModel name="imageUrl" id="imageUrl" required>
+            </mat-form-field>
+            <div class="bntclick">
+               <button type="button" mat-button mat-dialog-close id="close" class="btn btn-secondary">Close</button>
+               <button mat-button mat-dialog-close [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Add</button>
+             </div>
+         </form>
+      </div>
+
+
+

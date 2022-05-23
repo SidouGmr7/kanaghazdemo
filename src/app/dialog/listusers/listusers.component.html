@@ -1,0 +1,21 @@
+<p-table [value]="users" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Host</th>
+            <th>role</th>
+            <th>Etat</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+        <tr>
+            <td>{{user.host}}</td>
+            <td>{{user.role}}</td>
+            <div *ngIf="user.etat">
+                <td><i class='bx bx-signal-5' ></i></td>
+            </div>
+            <div *ngIf="user.etat == false">
+                <td><i class='bx bx-no-signal' ></i></td>
+            </div>
+        </tr>
+    </ng-template>
+</p-table>

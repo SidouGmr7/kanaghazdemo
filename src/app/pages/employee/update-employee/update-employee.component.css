@@ -1,0 +1,14 @@
+mat-form-field{
+    display: inline;
+}
+
+form{
+    width: 300px;
+}
+
+.bntclick{
+    float: right;
+}
+button{
+    margin-left: 5px;
+}

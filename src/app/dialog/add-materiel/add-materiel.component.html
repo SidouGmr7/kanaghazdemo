@@ -1,0 +1,42 @@
+<div class="form-container">
+    <h1>Ajouer Un Article</h1>
+    <form ngModel #addForm="ngForm" (ngSubmit)="onAdd(addForm.value)">
+        <div class="p-float-label p-input-icon-left">
+            <i class="pi pi-user"></i>
+            <input ngModel type="text" pInputText name="categorie" > 
+            <label for="inputtext-left">Categorie</label>
+        </div>
+        <div class="p-float-label p-input-icon-left">
+            <i class="pi pi-user"></i>
+            <input ngModel type="text" pInputText name="marque" > 
+            <label for="inputtext-left">Marque</label>
+        </div>
+        <div class="p-float-label p-input-icon-left">
+            <i class="pi pi-user"></i>
+            <input ngModel type="text" pInputText name="serie" > 
+            <label for="inputtext-left">Serie</label>
+        </div>
+        <div class="p-float-label p-input-icon-left">
+            <i class="pi pi-user"></i>
+            <input ngModel type="number" mode="decimal" pInputText name="prix" > 
+            <label for="inputtext-left">Prix</label>
+        </div>
+        <div class="p-float-label p-input-icon-left">
+            <i class="pi pi-user"></i>
+            <input ngModel type="text" pInputText name="inventaire" > 
+            <label for="inputtext-left">inventaire</label>
+        </div>
+        <div class="p-float-label p-input-icon-left">
+            <i class="pi pi-user"></i>
+            <input ngModel type="text" pInputText name="etat" > 
+            <label for="inputtext-left">etat</label>
+        </div>
+        <div class="p-float-label p-input-icon-left">
+        <p-calendar ngModel [showIcon]="true" icon="pi pi-calendar" name="date" placeholder="date"></p-calendar>
+        </div>
+        <div class="p-float-label">
+            <p-button mat-dialog-close type="submit" >Add</p-button>
+        </div>
+    </form>
+</div>
+

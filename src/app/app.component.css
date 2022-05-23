@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/css?family=Tangerine");
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css';
+
+
+.pages{
+    width: calc(100% - 10rem);
+    height: auto;
+    margin-left: 10rem;
+    margin-top: 2rem;
+    z-index: 0;
+    position: static;
+    top: 0;
+    padding: 3rem; 
+    transition: all .8s ease-in-out;
+   
+   }
